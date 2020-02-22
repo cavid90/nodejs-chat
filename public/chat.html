@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <title>Chat app</title>
@@ -14,8 +18,8 @@
         <div class="compose">
             <form id="chat">
                 <input type="text" name="message" autocomplete="off" id="message" value="">
-                <button id="send">Send</button>
-                <button id="shareLocation">Share your location</button>
+                <button class="mybutton" id="send">Send</button>
+                <button class="mybutton" id="shareLocation">Share your location</button>
                 <hr>
                 <script id="message-template" type="text/html">
                     <div class="message">

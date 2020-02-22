@@ -13,7 +13,6 @@ socket.on('newUserAll', (message, user) => {
     const connectedUser = `${user.username}`;
     const messageText = `${connectedUser} joined to us !`
 
-    console.log(message)
     const html = Mustache.render(messagesTemplate, {
         user: 'System',
         message: messageText,
@@ -46,7 +45,6 @@ socket.on('sendLocationMessageToAll', (message, coords, user) => {
 })
 
 socket.on('roomData', ({room, users}) => {
-    console.log(users)
     const html = Mustache.render(sidebarTemplate, {
         room,
         users
