@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <title>Chat app</title>
+</head>
+<body>
+<div class="chat">
+    <div id="sidebar" class="chat__sidebar"></div>
+    <div class="chat__main">
+        <div id="messages" class="chat__messages"></div>
+        <div class="compose">
+            <form id="chat">
+                <input type="text" name="message" autocomplete="off" id="message" value="">
+                <button id="send">Send</button>
+                <button id="shareLocation">Share your location</button>
+                <hr>
+                <script id="message-template" type="text/html">
+                    <div class="message">
+                        <p>
+                            <span class="message__name">[{{user}}] </span>
+                            <i class="message__meta">{{time}}</i>
+                        </p>
+                        <p>{{message}} </p>
+                    </div>
+                </script>
+                <script id="message-template-location" type="text/html">
+                    <div class="message">
+                        <p>
+                            <span class="message__name">[{{user}}] </span>
+                            <i class="message__meta">{{time}}</i>
+                        </p>
+                        <p>
+                            <a href="{{url}}" target="_blank"><iframe src="https://google.com/maps?q={{lat}},{{long}}&output=embed" width="200" height="150" frameborder="0" style="border:1;" allowfullscreen=""></iframe></a>
+                        </p>
+                    </div>
+                </script>
+                <script id="sidebar-template" type="text/html">
+                    <h2 class="room-title">{{room}}</h2>
+                    <h3 class="list-title">Users</h3>
+                    <ul class="users">
+                        {{#users}}
+                            <li>{{username}}</li>
+                        {{/users}}
+                    </ul>
+                </script>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+<script src="assets/js/chat.js"></script>
+</body>
+</html>
